@@ -1,0 +1,17 @@
+name: 'Folk Archive'
+description: 'Acquires and runs Folk Archive archive builder'
+inputs:
+  archive_dir:
+    description: 'Directory containing archival data'
+    required: true
+    default: 'content'
+  theme_dir:
+    description: 'Directory containing the site theme data'
+    required: true
+    default: 'site'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.archive_dir }}
+    - ${{ inputs.theme_dir }}
