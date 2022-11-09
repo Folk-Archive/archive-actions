@@ -1,3 +1,3 @@
 #!/bin/sh -l
 
-./main
+cd /github/workspace && ./main
