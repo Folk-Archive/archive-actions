@@ -1,5 +1,4 @@
-#!/usr/bin/sh
-set -e
+#!/bin/sh -l
 
 mv main /github/workspace
 cd /github/workspace && ./main
