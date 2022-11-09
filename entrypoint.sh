@@ -1,3 +1,3 @@
-#!/bin/sh -h
+#!/bin/sh -l
 
 ./main
