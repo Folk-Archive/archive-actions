@@ -8,8 +8,8 @@ RUN apt-get update && apt-get install -y \
   wget
  
 # Get archive binary from latest release
-RUN export builder_bin=$(curl -s https://api.github.com/repos/Folk-Archive/archive-builder/releases/latest | jq -r ".assets[] .browser_download_url")
-RUN wget $builder_bin
+# RUN export builder_bin=$(curl -s https://api.github.com/repos/Folk-Archive/archive-builder/releases/latest | jq -r ".assets[] .browser_download_url")
+RUN wget $(curl -s https://api.github.com/repos/Folk-Archive/archive-builder/releases/latest | jq -r ".assets[] .browser_download_url")
 
 # Set main as executable
 RUN chmod +x main
