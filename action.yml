@@ -12,6 +12,9 @@ inputs:
 runs:
   using: 'docker'
   image: 'Dockerfile'
+  volumes:
+    - ${{ inputs.archive_dir }}:/content
+    - ${{ inputs.theme_dir }}:/site
   args:
     - ${{ inputs.archive_dir }}
     - ${{ inputs.theme_dir }}
