@@ -14,6 +14,8 @@ RUN wget $builder_bin
 # Set main as executable
 RUN chmod +x main
 
+RUN ls -la
+
 # Copy the runner script to the root fs
 COPY entrypoint.sh /entrypoint.sh
 
