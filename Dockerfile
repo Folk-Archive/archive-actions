@@ -22,7 +22,7 @@ RUN ls -la
 COPY entrypoint.sh /entrypoint.sh
 
 # Make the runner script the first stop
-ENTRYPOINT ["/entrypoint.sh"]
+ENTRYPOINT ["./entrypoint.sh"]
 
 
 
