@@ -4,7 +4,8 @@ FROM ubuntu:latest
 # Install helpful binaries
 RUN apt-get update && apt-get install -y \
   jq \
-  curl
+  curl \
+  wget
  
 # Get archive binary from latest release
 RUN builder_bin=$(curl -s https://api.github.com/repos/Folk-Archive/archive-builder/releases/latest | jq -r ".assets[] .browser_download_url")
