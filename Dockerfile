@@ -5,24 +5,16 @@ FROM ubuntu:latest
 RUN apt-get update && apt-get install -y \
   jq \
   curl \
-  wget
- 
+  wget 
 # Get archive binary from latest release
-
-# RUN export builder_bin=$(curl -s https://api.github.com/repos/Folk-Archive/archive-builder/releases/latest | jq -r ".assets[] .browser_download_url")
 RUN wget $(curl -s https://api.github.com/repos/Folk-Archive/archive-builder/releases/latest | jq -r ".assets[] .browser_download_url")
-
 
 # Set main as executable
 RUN chmod +x main
 
-RUN ls -la
-
 # Copy the runner script to the root fs
 COPY entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
 
 # Make the runner script the first stop
 ENTRYPOINT ["/entrypoint.sh"]
-
-
-
