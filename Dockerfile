@@ -6,8 +6,9 @@ RUN apt-get update && apt-get install -y \
   jq \
   curl \
   wget 
+
 # Get archive binary from latest release
-RUN wget $(curl -s https://api.github.com/repos/Folk-Archive/archive-builder/releases/latest | jq -r ".assets[] .browser_download_url")
+RUN wget $(curl -s https://api.github.com/repos/Folk-Archive/archive-builder/releases/latest | jq -r ".assets[] .browser_download_url") -O /main
 
 # Set main as executable
 RUN chmod +x main
