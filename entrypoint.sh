@@ -2,4 +2,4 @@
 
 mv /main /github/workspace
 cd /github/workspace && ./main
-ls >> $GITHUB_OUTPUT
+echo "$(ls)" >> $GITHUB_OUTPUT
